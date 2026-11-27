@@ -1,0 +1,128 @@
+/*! © 2026 Award Insights · awardinsights.org · All rights reserved. */
+:root{color-scheme:light;--ground:#f4f5f8;--paper:#fff;--ink:#191917;--muted:#63625c;--faint:#8f8d85;--line:#dfe2e8;--line-soft:#eceef2;--accent:#1f4fd8;--accent-ink:#163a9e;--accent-soft:#e3eafe;--shadow:0 1px 2px rgba(20,20,18,.05),0 10px 30px -14px rgba(20,20,18,.22);
+ --fed:#1f4fd8;--nih:#00777a;--nsf:#6a2fd6;--prt:#cf3f1a;--des:#b8237f}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){color-scheme:dark;--ground:#0d0f10;--paper:#17191b;--ink:#e9e9e3;--muted:#9a9a91;--faint:#6a6a63;--line:#292b2d;--line-soft:#202224;--accent:#4f7bf0;--accent-ink:#9db8ff;--accent-soft:#15224a;--shadow:0 1px 2px rgba(0,0,0,.35),0 12px 32px -16px rgba(0,0,0,.65);
+ --fed:#4f7bf0;--nih:#2bb3b6;--nsf:#9c6cf0;--prt:#ef6a45;--des:#e05aa8}}
+:root[data-theme="dark"]{color-scheme:dark;--ground:#0d0f10;--paper:#17191b;--ink:#e9e9e3;--muted:#9a9a91;--faint:#6a6a63;--line:#292b2d;--line-soft:#202224;--accent:#4f7bf0;--accent-ink:#9db8ff;--accent-soft:#15224a;--shadow:0 1px 2px rgba(0,0,0,.35),0 12px 32px -16px rgba(0,0,0,.65);
+ --fed:#4f7bf0;--nih:#2bb3b6;--nsf:#9c6cf0;--prt:#ef6a45;--des:#e05aa8}
+*{box-sizing:border-box}
+body{margin:0;background:var(--ground);color:var(--ink);font-family:"Readex Pro",system-ui,sans-serif;line-height:1.55;-webkit-font-smoothing:antialiased}
+.wrap{max-width:820px;margin:0 auto;padding:26px 16px 48px}
+h1{font-family:"Young Serif",Georgia,serif;font-weight:400;font-size:clamp(28px,5vw,40px);letter-spacing:-.01em;line-height:1.15;margin:10px 0 6px}
+h2{font-family:"Young Serif",Georgia,serif;font-weight:400;font-size:19px;line-height:1.25;margin:0 0 2px}
+p{margin:0 0 10px;font-size:14.5px}
+a{color:var(--accent-ink);text-decoration:none}
+a:hover,a:focus-visible{text-decoration:underline}
+.crumb{font-size:13px;color:var(--muted);margin:0}
+.crumb a{color:var(--muted)}
+.lede{color:var(--muted);font-size:15px;margin:0 0 18px}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:10px;box-shadow:var(--shadow);padding:16px 18px 18px;margin:0 0 14px}   /* as the tools' cards */
+.card>h2{color:var(--c,var(--ink))}   /* the tool's color marks the card by its title, not an edge stripe (owner, 2026-11-19) */
+.card.counted>h2{color:var(--ink)}
+.card .src{color:var(--muted);font-size:12.5px;margin:0 0 10px}
+.big{font-size:26px;font-weight:600;letter-spacing:-.01em;margin:0}
+.big small{font-size:14px;font-weight:400;color:var(--muted);margin-left:6px}
+.ysc{overflow-x:auto}
+.yrs{width:100%;border-collapse:collapse;margin:10px 0 8px;font-size:13px;font-variant-numeric:tabular-nums}
+.yrs th{font-weight:500;color:var(--muted);text-align:right;padding:3px 6px;border-bottom:1px solid var(--line)}
+.yrs td{text-align:right;padding:4px 6px;border-bottom:1px solid var(--line-soft)}
+.yrs th:first-child,.yrs td:first-child{text-align:left;padding-left:0}
+.ag{list-style:none;margin:6px 0 8px;padding:0;font-size:13.5px}
+.ag li{display:flex;justify-content:space-between;gap:12px;padding:3px 0;border-bottom:1px solid var(--line-soft)}
+.ag li span:last-child{font-variant-numeric:tabular-nums;white-space:nowrap}
+.jump{font-size:13.5px;line-height:1.9;color:var(--faint);margin:4px 0 18px}
+.prof{width:100%;border-collapse:collapse;font-size:13.5px;margin-top:6px}
+.prof th{text-align:left;font-weight:500;color:var(--muted);padding:7px 14px 7px 0;vertical-align:top;white-space:nowrap;border-bottom:1px solid var(--line-soft);width:1%}
+.prof th small{display:block;font-weight:400;color:var(--faint)}
+.prof td{padding:7px 0;border-bottom:1px solid var(--line-soft);line-height:1.55}
+.prof td b{font-weight:600;font-variant-numeric:tabular-nums}
+@media(max-width:560px){.prof{table-layout:fixed}.prof th{white-space:normal;width:30%;padding-right:10px}.prof .pk{white-space:normal}}
+.go{font-size:13.5px;font-weight:500;margin:6px 0 0}
+.note{color:var(--muted);font-size:12.5px}
+.counted h3{font-size:13px;font-weight:600;color:var(--muted);margin:14px 0 6px}
+.counted .note{margin:0 0 6px}
+.srcl,.away{margin:0;padding-left:18px;font-size:13.5px}
+.srcl li,.away li{margin:0 0 4px}
+.rlist{list-style:none;margin:0;padding:0;font-size:13.5px}
+.rlist li{padding:6px 0;border-bottom:1px solid var(--line-soft);overflow-wrap:anywhere}
+.rlist .rn{font-weight:500}
+.rlist .tg{color:var(--faint);font-size:12px;margin-left:8px;white-space:nowrap}
+.rlist .aka,.rlist .why{display:block;color:var(--muted);font-size:12.5px;margin-top:2px}
+.rmore{margin:6px 0 0;font-size:13px}
+.rmore summary{cursor:pointer;color:var(--muted);font-weight:500;width:max-content;max-width:100%;padding:4px 0}
+.rmore summary:hover{color:var(--ink)}
+.states{columns:3 180px;font-size:14px;margin:8px 0 0;padding:0;list-style:none}
+.states li{padding:2px 0;break-inside:avoid}
+.states small,.list small{color:var(--faint)}
+.list{width:100%;border-collapse:collapse;font-size:13.5px;background:var(--paper);border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.list th{font-weight:500;color:var(--muted);text-align:left;padding:7px 10px;border-bottom:1px solid var(--line)}
+.list td{padding:6px 10px;border-bottom:1px solid var(--line-soft);vertical-align:top}
+.list td.n,.list th.n{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+@media(max-width:560px){.card{padding:14px 14px 16px}.list .c{display:none}.yrs{font-size:12px}.yrs th,.yrs td{padding:3px 3px}.big{font-size:23px}}
+.ihd{display:flex;flex-wrap:wrap;align-items:center;gap:4px 14px;margin:10px 0 6px}
+.ihd h1{margin:0}
+.ihd .ai-dtag{margin-left:0}
+.counted .oq{border:1px solid var(--muted);border-radius:8px;padding:2px 14px 10px;margin:12px 0 4px}
+.counted .oq h3{display:flex;align-items:center;gap:6px;color:var(--ink)}
+.counted .oq h3 svg{width:15px;height:15px;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.counted .oq p,.counted .flagp{font-size:13.5px;margin:0 0 4px}
+/* entry pages (owner, 2026-11-24): a plain summary sentence, five years as bars, largest programs linked */
+.sum{font-size:15.5px;line-height:1.6;margin:-8px 0 18px;max-width:70ch}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap}
+.bars{display:grid;gap:8px;margin:12px 0 4px}
+.bc{display:flex;flex-direction:column;align-items:center;min-width:0}
+.bp{height:118px;padding-top:20px;width:100%;display:flex;flex-direction:column;justify-content:flex-end;align-items:center}
+.bv{flex:none;font-size:12.5px;font-variant-numeric:tabular-nums;white-space:nowrap;line-height:16px;margin-bottom:3px}
+.bb{flex:none;width:min(48px,74%);background:var(--c);border-radius:4px 4px 0 0;display:flex;flex-direction:column-reverse;overflow:hidden}
+.bb:has(i){background:none}
+.bb i{display:block;width:100%;flex:none}
+.bb i.s0,.blg i.s0{background:var(--c)}
+.bb i.s1,.blg i.s1{background:color-mix(in srgb,var(--c) 34%,var(--paper))}
+.bb i.s1{border-bottom:2px solid var(--paper)}
+.bc.pt .bb{opacity:.5}
+.by{font-size:12px;color:var(--muted);width:100%;text-align:center;border-top:1px solid var(--line);padding-top:4px;white-space:nowrap}
+.blg{display:flex;flex-wrap:wrap;gap:4px 14px;font-size:12px;color:var(--muted);margin:4px 0 8px}
+.blg i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:5px;vertical-align:-1px}
+.ag .px{color:var(--faint);font-size:12px;margin-left:6px;white-space:nowrap}
+.ag a.aw{font-size:12px;margin-left:6px;white-space:nowrap}
+@media(max-width:560px){.bars{gap:4px}.bv{font-size:11.5px}}
+.pbar{display:flex;height:10px;border-radius:3px;overflow:hidden;margin:3px 0 5px;background:var(--line-soft)}
+.pbar i{display:block;height:100%;border-right:2px solid var(--paper)}
+.pbar i:last-child{border-right:0}
+.pk{display:inline-block;white-space:nowrap;margin-right:12px}
+.pk i{display:inline-block;width:9px;height:9px;border-radius:2px;margin-right:5px;vertical-align:0}
+/* program pages (2026-11-25): award sizes as three figures; latest awards as date, recipient, amount, then the title */
+.tiles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:8px 0 2px}
+.tiles>div{background:var(--ground);border:1px solid var(--line-soft);border-radius:8px;padding:10px 12px;min-width:0}
+.tiles span{display:block;font-size:12.5px;color:var(--muted)}.tiles b{display:block;font-size:21px;font-weight:600;font-variant-numeric:tabular-nums;margin-top:2px}
+.tiles small{display:block;font-size:12.5px;margin-top:3px;overflow-wrap:anywhere}
+/* latest awards: one grid shared by every row (subgrid), so dates, names, amounts and titles line up whatever the date's width (2026-11-27: NSF's "Starts …" dates are wider) */
+.law{list-style:none;margin:6px 0 8px;padding:0;font-size:13.5px;display:grid;grid-template-columns:max-content minmax(0,1fr) max-content;column-gap:12px}
+.law li{grid-column:1/-1;display:grid;grid-template-columns:subgrid;align-items:baseline;padding:7px 0;border-bottom:1px solid var(--line-soft)}
+.law li>div{display:contents}.law .d{color:var(--muted);font-size:12.5px;white-space:nowrap}
+.law .n{font-variant-numeric:tabular-nums;white-space:nowrap;text-align:right}
+.law .t{grid-column:2/-1;display:block;font-size:12.5px;color:var(--muted);margin:2px 0 0;overflow-wrap:anywhere}.law a.t{color:var(--muted);text-decoration:underline;text-decoration-color:var(--line)}
+@media(max-width:560px){.tiles{grid-template-columns:1fr}.law{grid-template-columns:minmax(0,1fr) max-content}.law .d{grid-column:1/-1}.law .t{grid-column:1/-1}}
+/* program pages: compare an institution with the recipients (owner, 2026-11-27; site/shared/progcmp.js) */
+.pcmp{margin:4px 0 8px}
+.pcmp label{display:block;font-size:12.5px;color:var(--muted);margin-bottom:5px}
+.pcs{position:relative}
+.pcs input{width:100%;font-family:inherit;font-size:15px;color:var(--ink);background:var(--paper);border:1px solid var(--line);border-radius:5px;padding:9px 12px}
+.pcs input:focus{outline:2px solid var(--c,var(--accent));outline-offset:1px;border-color:var(--c,var(--accent))}
+.pcres{position:absolute;z-index:30;left:0;right:0;top:100%;margin-top:4px;background:var(--paper);border:1px solid var(--line);border-radius:5px;box-shadow:0 10px 30px -14px rgba(20,20,18,.3);max-height:320px;overflow:auto}
+.pcres button{display:flex;width:100%;text-align:left;gap:10px;align-items:baseline;background:none;border:0;border-bottom:1px solid var(--line-soft);padding:9px 12px;color:var(--ink);font-family:inherit;font-size:14px;cursor:pointer}
+.pcres button:last-child{border-bottom:0}
+.pcres button:hover,.pcres button:focus{background:var(--line-soft);outline:none}
+.pcres .rs{margin-left:auto;color:var(--faint);font-size:12px;white-space:nowrap}
+.pcres .none{margin:0;padding:9px 12px;color:var(--muted);font-size:13.5px}
+.pcme{margin:0;font-size:13.5px;color:var(--muted);line-height:1.6}
+.pcme b{color:var(--ink);font-weight:600}
+.pcchip{display:inline-flex;align-items:center;gap:6px;padding:2px 4px 2px 10px;border-radius:999px;background:color-mix(in srgb,var(--c) 14%,var(--paper));color:var(--ink);font-weight:600}
+.pcchip button{border:0;background:none;color:var(--muted);font-size:12px;cursor:pointer;padding:2px 6px;border-radius:999px}
+.pcchip button:hover,.pcchip button:focus-visible{background:var(--line-soft);color:var(--ink)}
+.pbar.cmp i:not(.me),.prof tr.cmp .pk:not(.me),.prof tr.cmp .pf:not(.me){opacity:.28}
+.pbar.cmp i.me,.pk.me i{background:var(--c)!important}
+.pk.me,.pf.me{color:var(--ink);font-weight:600}
+.pcr{margin:3px 0 0;font-size:12.5px;color:var(--muted)}
+.pcr b{color:var(--ink)}
+.ag li.me{background:color-mix(in srgb,var(--c) 12%,var(--paper))}
